@@ -9,6 +9,7 @@ import (
 
 func main() {
 	r := gin.Default()
+	r.Use(Cors())
 	router.CollectRoute(r)
 	conf := config.GetConfig()
 	r.Run(":" + conf.Httpport)
